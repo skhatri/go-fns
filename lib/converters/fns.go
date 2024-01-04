@@ -21,6 +21,26 @@ func UnmarshalFile(file string, t interface{}) error {
 	return nil
 }
 
+func UnmarshalJsonFile(file string, t interface{}) error {
+	content, err := os.ReadFile(file)
+	if err != nil {
+		return fmt.Errorf("file: [%s], error: [%v]", file, err)
+	}
+	err = UnmarshalJson(content, t)
+	if err != nil {
+		return fmt.Errorf("file: [%s], error: [%v]", file, err)
+	}
+	return nil
+}
+
+func UnmarshalJson(content []byte, t interface{}) error {
+	err := json.Unmarshal(content, t)
+	if err != nil {
+		return fmt.Errorf("error unmarshalling to %T, with error %v", t, err)
+	}
+	return nil
+}
+
 func UnmarshalYaml(content []byte, t interface{}) error {
 	err := yaml.Unmarshal(content, t)
 	if err != nil {
