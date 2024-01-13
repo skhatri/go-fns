@@ -1,7 +1,16 @@
 package collections
 
+func CopyAttribute(attributeName string, source map[string]string, target map[string]string) *string {
+	var out *string
+	if value, ok := source[attributeName]; ok {
+		target[attributeName] = value
+		out = &value
+	}
+	return out
+}
+
 func FilteredByKey[K comparable, V any](m map[K]V, pred func(key K) bool) map[K]V {
-	filteredMap := make(map[K]V, 0)
+	filteredMap := make(map[K]V)
 	for k, v := range m {
 		if pred(k) {
 			filteredMap[k] = v
