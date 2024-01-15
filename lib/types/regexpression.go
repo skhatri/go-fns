@@ -29,3 +29,11 @@ func (re *Regex) UnmarshalText(text []byte) error {
 	return nil
 }
 
+func MustCompile(pattern string) *Regex {
+  reg, err := Compile(pattern)
+  if err != nil {
+    panic(err)
+  }
+  return reg
+}
+
