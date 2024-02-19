@@ -7,25 +7,35 @@ type Set[K comparable, T any] struct {
 
 func NewSet[T comparable](items []T) Set[T, T] {
 	idx := make(map[T]bool)
+  dedup := make([]T, 0)
 	for _, item := range items {
-		idx[item] = true
+    if _, ok := idx[item]; !ok {
+		  idx[item] = true
+      dedup = append(dedup, item)
+    }
 	}
 	return Set[T, T]{
-		values: items,
+		values: dedup,
 		idx:    idx,
 	}
 }
 
 func NewSetWithComparator[K comparable, T any](items []T, keyFun func(T) K) Set[K, T] {
 	idx := make(map[K]bool)
+  dedup := make([]T, 0)
 	for _, item := range items {
-		idx[keyFun(item)] = true
+    key := keyFun(item)
+    if _, ok := idx[key]; !ok {
+		  idx[key] = true
+      dedup = append(dedup, item)
+    }
 	}
 	return Set[K, T]{
-		values: items,
+		values: dedup,
 		idx:    idx,
 	}
 }
+
 func (set *Set[K, T]) Contains(k K) bool {
 	if _, ok := set.idx[k]; ok {
 		return true
