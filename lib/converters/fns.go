@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"gopkg.in/yaml.v3"
 	"io"
 	"os"
+	"gopkg.in/yaml.v3"
 )
 
 func UnmarshalFile(file string, t interface{}) error {
@@ -57,11 +57,47 @@ func MarshalToYamlFile(t interface{}, path string) error {
 	return os.WriteFile(path, data, os.ModePerm)
 }
 
+func MarshalToJsonFile(t interface{}, path string) error {
+	data, err := marshalJson(t, false)
+	if err != nil {
+		return err
+	}
+	return os.WriteFile(path, data, os.ModePerm)
+}
+
+func MarshalToJsonPrettyFile(t interface{}, path string) error {
+	data, e := marshalJson(t, true)
+	if e != nil {
+		return e
+	}
+	return os.WriteFile(path, data, os.ModePerm)
+}
+
 func MarshalToJson(item interface{}) string {
-	bff := bytes.Buffer{}
-	err := json.NewEncoder(&bff).Encode(item)
+	b, err := marshalJson(item, true)
 	if err == nil {
-		return bff.String()
+		return string(b)
+	}
+	return ""
+}
+
+func marshalJson(item interface{}, pretty bool) ([]byte, error) {
+	bff := bytes.Buffer{}
+	encoder := json.NewEncoder(&bff)
+	if pretty {
+		encoder.SetIndent("", "  ")
+	}
+	err := encoder.Encode(item)
+	if err == nil {
+		return bff.Bytes(), nil
+	}
+	return nil, err
+}
+
+func MarshalToJsonPretty(item interface{}) string {
+	data, err := marshalJson(item, true)
+	if err == nil {
+		return string(data)
 	}
 	return ""
 }
