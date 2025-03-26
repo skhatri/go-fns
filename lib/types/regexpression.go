@@ -6,7 +6,7 @@ import (
 	"regexp"
 )
 
-// RegexExpression represents a regular expression pattern with methods for
+// Regex represents a regular expression pattern with methods for
 // compilation and text marshaling/unmarshaling.
 type Regex struct {
 	*regexp.Regexp
