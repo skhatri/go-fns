@@ -1,6 +1,7 @@
 # go-fns
 
 [![Build](https://github.com/skhatri/go-fns/actions/workflows/build.yml/badge.svg)](https://github.com/skhatri/go-fns/actions/workflows/build.yml)
+[![codecov](https://codecov.io/gh/skhatri/go-fns/branch/main/graph/badge.svg)](https://codecov.io/gh/skhatri/go-fns)
 [![Go Report Card](https://goreportcard.com/badge/github.com/skhatri/go-fns)](https://goreportcard.com/report/github.com/skhatri/go-fns)
 [![GoDoc](https://godoc.org/github.com/skhatri/go-fns?status.svg)](https://godoc.org/github.com/skhatri/go-fns)
 
