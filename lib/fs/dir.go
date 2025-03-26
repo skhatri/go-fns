@@ -78,8 +78,5 @@ func ReadBytes(f string) ([]byte, error) {
 }
 
 func CloseSafely(fs io.Closer) {
-	err := fs.Close()
-	if err != nil {
-		//noop
-	}
+	_ = fs.Close()
 }
