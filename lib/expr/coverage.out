@@ -1,0 +1,10 @@
+mode: set
+github.com/skhatri/go-fns/lib/expr/expressions.go:11.43,13.18 2 1
+github.com/skhatri/go-fns/lib/expr/expressions.go:13.18,15.3 1 1
+github.com/skhatri/go-fns/lib/expr/expressions.go:16.2,18.33 3 1
+github.com/skhatri/go-fns/lib/expr/expressions.go:18.33,20.3 1 1
+github.com/skhatri/go-fns/lib/expr/expressions.go:21.2,23.14 3 1
+github.com/skhatri/go-fns/lib/expr/expressions.go:23.14,25.3 1 1
+github.com/skhatri/go-fns/lib/expr/expressions.go:26.2,28.12 3 1
+github.com/skhatri/go-fns/lib/expr/expressions.go:29.12,30.20 1 1
+github.com/skhatri/go-fns/lib/expr/expressions.go:31.10,32.20 1 1

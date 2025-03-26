@@ -1,0 +1,11 @@
+mode: set
+github.com/skhatri/go-fns/lib/types/regexpression.go:11.43,13.16 2 1
+github.com/skhatri/go-fns/lib/types/regexpression.go:13.16,15.3 1 1
+github.com/skhatri/go-fns/lib/types/regexpression.go:16.2,16.25 1 1
+github.com/skhatri/go-fns/lib/types/regexpression.go:19.48,21.2 1 1
+github.com/skhatri/go-fns/lib/types/regexpression.go:23.51,25.16 2 1
+github.com/skhatri/go-fns/lib/types/regexpression.go:25.16,27.3 1 1
+github.com/skhatri/go-fns/lib/types/regexpression.go:28.2,29.12 2 1
+github.com/skhatri/go-fns/lib/types/regexpression.go:32.41,34.17 2 1
+github.com/skhatri/go-fns/lib/types/regexpression.go:34.17,35.15 1 1
+github.com/skhatri/go-fns/lib/types/regexpression.go:37.3,37.13 1 1
